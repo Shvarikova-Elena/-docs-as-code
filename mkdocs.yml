@@ -1,2 +1,73 @@
-site_name: Руководство пользователя к платформе Взнания # Название сайта
-site_description: Описание действий при работе с платформой Взнания # Описание сайта, добавляется в meta-теги
+site_name: Учебный проект. Руководство пользователя к платформе Взнания
+site_description: Описание действий при работе с платформой Взнания
+theme:
+  name: material
+  logo: images/logo.jpg
+  font:
+    text: Roboto
+    code: Roboto Mono
+  language: ru 
+  palette:
+    # Настройки светлой темы
+    - scheme: default 
+      toggle:
+        icon: material/weather-sunny # Иконка для активации светлой темы
+        name: Выключить солнышко # Всплывающий текст-подсказка
+      primary: light blue # Основной цвет
+      accent: purple # Акцентный цвет
+      # вы можете использовать любой цвет из списка: 
+      # red; pink; purple; deep purple; indigo; blue; light blue; cyan; teal; 
+      # green; light green; lime; yellow; amber; orange; deep orange; brown; 
+      # grey; blue grey; black; white
+    # Настройки тёмной темы
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Позвать солнышко
+      primary: deep purple
+      accent: cyan
+
+  features: # настройки функциональностей темы
+    #- navigation.sections # Добавление разделов верхнего уровня в боковом меню, отключение спойлеров в боковом меню
+    - navigation.path # Хлебные крошки
+    - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
+    #- navigation.tabs # Верхнее меню
+    #- navigation.tabs.sticky # Фиксация верхнего меню
+    - navigation.expand # Разворачивает спойлеры в левом меню по умолчанию
+    #- toc.integrate # Фиксирует оглавление страницы в левом меню
+    - navigation.instant # Функция быстрой загрузки страниц
+    - navigation.top # Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы
+    - search.suggest # Подсказки при вводе поискового запроса
+    - search.highlight # Подсветка результатов поиска в тексте страницы
+    - content.code.copy # Кнопка копирования в блоке кода
+
+nav:
+  - Главная страница: index.md
+  - Личный кабинет ученика:
+    - student_lk/index.md
+    - Регистрация ученика на платформе: student_lk/student_reg.md
+    - Статистика: student_lk/stats.md
+    - Выполнение задания: student_lk/task_exec.md
+  - Личный кабинет учителя:
+    - teacher_lk/index.md
+    - Регистрация учителя на платформе: teacher_lk/teacher_reg.md
+    - Подготовка задания: teacher_lk/task_prep.md    
+
+markdown_extensions: # Расширения markdown
+  - admonition # Поддержка информационных панелей (сообщений типа «Внимание», «Совет», «Примечание», etc.)
+  - footnotes # Поддержка встроенных сносок на страницах
+  - attr_list # Использование html-атрибутов и CSS в элементах markdown
+  - md_in_html # Поддержка markdown внутри html
+  - def_list # Поддержка списков определений
+  - pymdownx.tabbed: # Использование вкладок (табов)
+      alternate_style: true
+  - pymdownx.details # Использование спойлеров (катов)
+  - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
+      anchor_linenums: true
+  - pymdownx.superfences # Поддержка вложенных блоков кода
+  - pymdownx.emoji: # Иконки и эмодзи
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search   
