@@ -70,4 +70,9 @@ markdown_extensions: # Расширения markdown
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
-  - search   
+  - search
+  - tags:
+      tags_allowed:
+      - ученик
+      - учитель
+      - урок   
