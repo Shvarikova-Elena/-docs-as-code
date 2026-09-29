@@ -51,7 +51,8 @@ nav:
   - Личный кабинет учителя:
     - teacher_lk/index.md
     - Регистрация учителя на платформе: teacher_lk/teacher_reg.md
-    - Подготовка задания: teacher_lk/task_prep.md    
+    - Создание интерактивного урока: teacher_lk/interactive.md
+    - Создание синхронного урока: teacher_lk/task_prep.md   
 
 markdown_extensions: # Расширения markdown
   - admonition # Поддержка информационных панелей (сообщений типа «Внимание», «Совет», «Примечание», etc.)
@@ -75,4 +76,5 @@ plugins:
       tags_allowed:
       - ученик
       - учитель
-      - урок   
+      - урок
+  - glightbox   
