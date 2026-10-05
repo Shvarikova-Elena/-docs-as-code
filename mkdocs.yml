@@ -1,8 +1,8 @@
-site_name: Учебный проект. Руководство пользователя к платформе Взнания
+site_name: Учебный проект
 site_description: Описание действий при работе с платформой Взнания
 theme:
   name: material
-  logo: images/logo.jpg
+  logo: images/15.jpg
   font:
     text: Roboto
     code: Roboto Mono
@@ -13,8 +13,8 @@ theme:
       toggle:
         icon: material/weather-sunny # Иконка для активации светлой темы
         name: Выключить солнышко # Всплывающий текст-подсказка
-      primary: light blue # Основной цвет
-      accent: purple # Акцентный цвет
+      primary: blue grey # Основной цвет
+      accent: grey # Акцентный цвет
       # вы можете использовать любой цвет из списка: 
       # red; pink; purple; deep purple; indigo; blue; light blue; cyan; teal; 
       # green; light green; lime; yellow; amber; orange; deep orange; brown; 
@@ -29,7 +29,7 @@ theme:
 
   features: # настройки функциональностей темы
     #- navigation.sections # Добавление разделов верхнего уровня в боковом меню, отключение спойлеров в боковом меню
-    - navigation.path # Хлебные крошки
+    #- navigation.path # Хлебные крошки
     - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
     - navigation.tabs # Верхнее меню
     - navigation.tabs.sticky # Фиксация верхнего меню
@@ -46,12 +46,12 @@ nav:
   - Пользовательские сценарии:
     - Удаление заметки в приложении Нотсапп: note_delete.md
   - Примеры статей:
-    - Платформа Взнания:
-      - Личный кабинет ученика:
+    - Платформа Взнания: vznanya/info_vznanya.md
+    - Личный кабинет ученика: 
         - Регистрация ученика на платформе: student_lk/student_reg.md
         - Статистика: student_lk/stats.md
         - Выполнение задания: student_lk/task_exec.md
-      - Личный кабинет учителя:
+    - Личный кабинет учителя:
         - Регистрация учителя на платформе: teacher_lk/teacher_reg.md
         - Создание интерактивного урока: teacher_lk/interactive.md
         - Создание синхронного урока: teacher_lk/task_prep.md   
