@@ -43,16 +43,18 @@ theme:
 
 nav:
   - Главная страница: index.md
-  - Личный кабинет ученика:
-    - student_lk/index.md
-    - Регистрация ученика на платформе: student_lk/student_reg.md
-    - Статистика: student_lk/stats.md
-    - Выполнение задания: student_lk/task_exec.md
-  - Личный кабинет учителя:
-    - teacher_lk/index.md
-    - Регистрация учителя на платформе: teacher_lk/teacher_reg.md
-    - Создание интерактивного урока: teacher_lk/interactive.md
-    - Создание синхронного урока: teacher_lk/task_prep.md   
+  - Пользовательские сценарии:
+    - Удаление заметки в приложении Нотсапп: note_delete.md
+  - Примеры статей:
+    - Платформа Взнания:
+      - Личный кабинет ученика:
+        - Регистрация ученика на платформе: student_lk/student_reg.md
+        - Статистика: student_lk/stats.md
+        - Выполнение задания: student_lk/task_exec.md
+      - Личный кабинет учителя:
+        - Регистрация учителя на платформе: teacher_lk/teacher_reg.md
+        - Создание интерактивного урока: teacher_lk/interactive.md
+        - Создание синхронного урока: teacher_lk/task_prep.md   
 
 markdown_extensions: # Расширения markdown
   - admonition # Поддержка информационных панелей (сообщений типа «Внимание», «Совет», «Примечание», etc.)
