@@ -45,6 +45,7 @@ nav:
   - Главная страница: index.md
   - Пользовательские сценарии:
     - Удаление заметки в приложении Нотсапп: note_delete.md
+    - Диаграмма последовательности: diagram.md
   - Примеры статей:
     - Платформа Взнания: vznanya/info_vznanya.md
     - Личный кабинет ученика: 
@@ -82,4 +83,6 @@ plugins:
       - учитель
       - урок
   - glightbox
-  - swagger-ui-tag   
+  - swagger-ui-tag
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/   
