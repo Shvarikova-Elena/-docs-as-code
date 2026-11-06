@@ -1,0 +1,58 @@
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #562780; /*Основной цвет*/
+  --md-accent-fg-color: #A59D00; /*Акцентный цвет*/
+  --md-typeset-a-color: #DD37B4; /*Цвет ссылок*/
+  --md-default-bg-color: #f8f8f8; /*Фоновый цвет*/
+  --md-default-fg-color: #403f47; /*Основной цвет текста (абзацы, списки, подзаголовки, nav и toc)*/
+  --md-code-bg-color: #ffffff; /*Цвет фона блока кода*/
+  --md-code-fg-color: #27262e; /*Цвет текста в блоке кода*/
+  --md-default-fg-color--light: #150873; /*Цвет h1 и заголовков блоков toc и nav*/
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #562780; /*Основной цвет*/
+  --md-accent-fg-color: #A59D00; /*Акцентный цвет*/
+  --md-typeset-a-color: #DD37B4; /*Цвет ссылок*/
+  --md-default-bg-color: #181818; /*Фоновый цвет*/
+  --md-default-fg-color: #e8e4fd; /*Основной цвет текста (абзацы, списки, подзаголовки, nav и toc)*/
+  --md-code-bg-color: #ffffff; /*Цвет фона блока кода*/
+  --md-code-fg-color: #27262e; /*Цвет текста в блоке кода*/
+  --md-default-fg-color--light: #c5beff; /*Цвет h1 и заголовков блоков toc и nav*/
+}  
+
+/* Контейнеры поиска */
+.md-search__form,
+.md-search__inner,
+.md-search__input-container {
+  border-radius: 2rem !important;
+  background-color: transparent !important;
+}
+
+/* Поле ввода */
+.md-search__input {
+  border-radius: 2rem !important;
+  background-color: var(--md-default-bg-color) !important;
+  border: 1px solid var(--md-default-fg-color--lightest) !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+/* Состояние фокуса */
+.md-search__input:focus {
+  border-color: var(--md-accent-fg-color) !important;
+  box-shadow: 0 0 0 2px var(--md-accent-fg-color--transparent) !important;
+}
+
+/* Placeholder */
+.md-search__input::placeholder {
+  color: var(--md-default-fg-color--light) !important;
+}
+
+/* Цвет иконки лупы в светлой теме */
+[data-md-color-scheme="default"] .md-search__icon[for="__search"] {
+  color: var(--md-default-fg-color--light) !important;
+}
+
+/* Цвет иконки крестика (очистки поиска) в светлой теме */
+[data-md-color-scheme="default"] .md-search__icon[for="__search"] svg {
+  fill: currentColor;
+}

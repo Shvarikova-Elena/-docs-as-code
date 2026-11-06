@@ -1,0 +1,1099 @@
+<!DOCTYPE html><html lang="ru" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Описание учебного проекта">
+      
+      
+      
+      
+        <link rel="prev" href="../note_delete/">
+      
+      
+        <link rel="next" href="../vznanya/info_vznanya/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Диаграмма последовательности - Учебный проект</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href=".." title="Учебный проект" class="md-header__button md-logo" aria-label="Учебный проект" data-md-component="logo">
+      
+  <img src="../images/16.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Учебный проект
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Диаграмма последовательности
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="grey" aria-label="Включить темную тему" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Включить темную тему" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan" aria-label="Включить светлую тему" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Включить светлую тему" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная страница
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../note_delete/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Пользовательские сценарии
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../vznanya/info_vznanya/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Примеры статей
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/swagger/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Спецификации
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Учебный проект" class="md-nav__button md-logo" aria-label="Учебный проект" data-md-component="logo">
+      
+  <img src="../images/16.png" alt="logo">
+
+    </a>
+    Учебный проект
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная страница
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользовательские сценарии
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Пользовательские сценарии
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../note_delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удаление заметки в приложении Нотсапп
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Диаграмма последовательности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Примеры статей
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Примеры статей
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vznanya/info_vznanya/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа Взнания
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Личный кабинет ученика
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Личный кабинет ученика
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../student_lk/student_reg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Регистрация ученика на платформе
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../student_lk/stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статистика
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../student_lk/task_exec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Выполнение задания
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Личный кабинет учителя
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Личный кабинет учителя
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teacher_lk/teacher_reg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Регистрация учителя на платформе
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teacher_lk/interactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание интерактивного урока
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teacher_lk/task_prep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание синхронного урока
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Спецификации
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Спецификации
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/swagger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API-документация
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">Диаграмма последовательности</h1>
+<div class="puml-container"><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" data-diagram-type="SEQUENCE" style="width:900px;height:968px;background:#FFFFFF;" width="900px" height="968px" viewBox="0 0 900 968" zoomAndPan="magnify" preserveAspectRatio="xMidYMid meet" contentStyleType="text/css" class="diagram"><?plantuml 1.2026.9beta4?><defs/><g font-family="sans-serif" lengthAdjust="spacing"><rect x="48.55" y="390.758" width="353.661" height="143.664" fill="none" style="stroke:#000;stroke-width:1.5;"/><rect x="48.55" y="552.422" width="666.644" height="304.461" fill="none" style="stroke:#000;stroke-width:1.5;"/><g><title>............</title><rect x="61.05" y="86.297" width="8" height="794.586" fill="#000" fill-opacity="0"/><line x1="64.55" y1="86.297" x2="64.55" y2="880.883" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;"/></g><g><title>..........</title><rect x="382.71" y="86.297" width="8" height="794.586" fill="#000" fill-opacity="0"/><line x1="386.21" y1="86.297" x2="386.21" y2="880.883" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;"/></g><g><title>...</title><rect x="695.694" y="86.297" width="8" height="794.586" fill="#000" fill-opacity="0"/><line x1="699.194" y1="86.297" x2="699.194" y2="880.883" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;"/></g><g><title>.... ......</title><rect x="836.205" y="86.297" width="8" height="794.586" fill="#000" fill-opacity="0"/><line x1="839.705" y1="86.297" x2="839.705" y2="880.883" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;"/></g><text x="10" y="82.995" fill="#000" font-size="14" textLength="103.1">Пользователь</text><ellipse cx="64.55" cy="18.5" rx="8" ry="8" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;"/><path d="M64.55,26.5 L64.55,53.5 M51.55,34.5 L77.55,34.5 M64.55,53.5 L51.55,68.5 M64.55,53.5 L77.55,68.5" style="stroke:#181818;stroke-width:0.5;" fill="none"/><rect x="332.152" y="55" width="108.117" height="30.297" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;" rx="2.5" ry="2.5"/><text x="339.152" y="74.995" fill="#000" font-size="14" textLength="94.117">Приложение</text><rect x="679.322" y="55" width="39.744" height="30.297" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;" rx="2.5" ry="2.5"/><text x="686.322" y="74.995" fill="#000" font-size="14" textLength="25.744">Бэк</text><text x="789.424" y="82.995" fill="#000" font-size="14" textLength="94.562">База данных</text><path d="M821.705,34 C821.705,24 839.705,24 839.705,24 C839.705,24 857.705,24 857.705,34 L857.705,60 C857.705,70 839.705,70 839.705,70 C839.705,70 821.705,70 821.705,60 L821.705,34" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"/><path d="M821.705,34 C821.705,44 839.705,44 839.705,44 C839.705,44 857.705,44 857.705,34" style="stroke:#181818;stroke-width:0.5;" fill="none"/><text x="10" y="893.878" fill="#000" font-size="14" textLength="103.1">Пользователь</text><ellipse cx="64.55" cy="905.68" rx="8" ry="8" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;"/><path d="M64.55,913.68 L64.55,940.68 M51.55,921.68 L77.55,921.68 M64.55,940.68 L51.55,955.68 M64.55,940.68 L77.55,955.68" style="stroke:#181818;stroke-width:0.5;" fill="none"/><rect x="332.152" y="880.883" width="108.117" height="30.297" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;" rx="2.5" ry="2.5"/><text x="339.152" y="900.878" fill="#000" font-size="14" textLength="94.117">Приложение</text><rect x="679.322" y="880.883" width="39.744" height="30.297" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;" rx="2.5" ry="2.5"/><text x="686.322" y="900.878" fill="#000" font-size="14" textLength="25.744">Бэк</text><text x="789.424" y="893.878" fill="#000" font-size="14" textLength="94.562">База данных</text><path d="M821.705,907.18 C821.705,897.18 839.705,897.18 839.705,897.18 C839.705,897.18 857.705,897.18 857.705,907.18 L857.705,933.18 C857.705,943.18 839.705,943.18 839.705,943.18 C839.705,943.18 821.705,943.18 821.705,933.18 L821.705,907.18" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"/><path d="M821.705,907.18 C821.705,917.18 839.705,917.18 839.705,917.18 C839.705,917.18 857.705,917.18 857.705,907.18" style="stroke:#181818;stroke-width:0.5;" fill="none"/><polygon points="374.21,111.43,384.21,115.43,374.21,119.43,378.21,115.43" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="115.43" x2="380.21" y2="115.43" style="stroke:#181818;stroke-width:1;"/><text x="71.55" y="110.364" fill="#000" font-size="13" textLength="297.661">Выбирает заметку, которую хочет удалить</text><polygon points="75.55,140.563,65.55,144.563,75.55,148.563,71.55,144.563" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="144.563" x2="385.21" y2="144.563" style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="139.497" fill="#000" font-size="13" textLength="135.307">Открывает заметку</text><polygon points="374.21,169.695,384.21,173.695,374.21,177.695,378.21,173.695" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="173.695" x2="380.21" y2="173.695" style="stroke:#181818;stroke-width:1;"/><text x="71.55" y="168.629" fill="#000" font-size="13" textLength="200.637">Нажимает кнопку «Удалить»</text><polygon points="687.194,198.828,697.194,202.828,687.194,206.828,691.194,202.828" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="386.21" y1="202.828" x2="693.194" y2="202.828" style="stroke:#181818;stroke-width:1;"/><text x="393.21" y="197.762" fill="#000" font-size="13" textLength="288.983">запрос DELETE http://notesapp.su/api/notes</text><polygon points="75.55,243.094,65.55,247.094,75.55,251.094,71.55,247.094" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="247.094" x2="385.21" y2="247.094" style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="226.895" fill="#000" font-size="13" textLength="170.86">Открывает уведомление</text><text x="85.682" y="242.028" fill="#000" font-size="13" textLength="139.61">«Удалить заметку?»</text><polygon points="374.21,272.227,384.21,276.227,374.21,280.227,378.21,276.227" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="276.227" x2="380.21" y2="276.227" style="stroke:#181818;stroke-width:1;"/><text x="71.55" y="271.161" fill="#000" font-size="13" textLength="162.817">Нажимает кнопку «ДА»</text><polygon points="827.705,301.359,837.705,305.359,827.705,309.359,831.705,305.359" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="699.194" y1="305.359" x2="833.705" y2="305.359" style="stroke:#181818;stroke-width:1;"/><text x="706.194" y="300.293" fill="#000" font-size="13" textLength="116.511">Удаляет заметку</text><polygon points="397.21,330.492,387.21,334.492,397.21,338.492,393.21,334.492" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="391.21" y1="334.492" x2="698.194" y2="334.492" style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;"/><text x="403.21" y="329.426" fill="#000" font-size="13" textLength="48.407">204 ОК</text><polygon points="75.55,374.758,65.55,378.758,75.55,382.758,71.55,378.758" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="378.758" x2="385.21" y2="378.758" style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="358.559" fill="#000" font-size="13" textLength="170.86">Открывает уведомление</text><text x="85.682" y="373.692" fill="#000" font-size="13" textLength="198.777">«Заметка успешно удалена»</text><path d="M48.55,390.758 L112.993,390.758 L112.993,397.891 L102.993,407.891 L48.55,407.891 L48.55,390.758" style="stroke:#000;stroke-width:1.5;" fill="#EEE"/><rect x="48.55" y="390.758" width="353.661" height="143.664" fill="none" style="stroke:#000;stroke-width:1.5;"/><text x="63.55" y="403.825" fill="#000" font-size="13" textLength="19.443" font-weight="700">alt</text><text x="127.993" y="402.968" fill="#000" font-size="11" textLength="174.625" font-weight="700">[Возврат к списку заметок]</text><polygon points="374.21,435.023,384.21,439.023,374.21,443.023,378.21,439.023" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="439.023" x2="380.21" y2="439.023" style="stroke:#181818;stroke-width:1;"/><text x="71.55" y="433.958" fill="#000" font-size="13" textLength="297.661">Выбирает заметку, которую хочет удалить</text><polygon points="75.55,464.156,65.55,468.156,75.55,472.156,71.55,468.156" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="468.156" x2="385.21" y2="468.156" style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="463.09" fill="#000" font-size="13" textLength="135.307">Открывает заметку</text><polygon points="374.21,493.289,384.21,497.289,374.21,501.289,378.21,497.289" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="497.289" x2="380.21" y2="497.289" style="stroke:#181818;stroke-width:1;"/><text x="71.55" y="492.223" fill="#000" font-size="13" textLength="232.077">Нажимает кнопку «Мои заметки»</text><polygon points="75.55,522.422,65.55,526.422,75.55,530.422,71.55,526.422" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="526.422" x2="385.21" y2="526.422" style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="521.356" fill="#000" font-size="13" textLength="182.419">Открывает Главный экран</text><path d="M48.55,552.422 L112.993,552.422 L112.993,559.555 L102.993,569.555 L48.55,569.555 L48.55,552.422" style="stroke:#000;stroke-width:1.5;" fill="#EEE"/><rect x="48.55" y="552.422" width="666.644" height="304.461" fill="none" style="stroke:#000;stroke-width:1.5;"/><text x="63.55" y="565.489" fill="#000" font-size="13" textLength="19.443" font-weight="700">alt</text><text x="127.993" y="564.632" fill="#000" font-size="11" textLength="281.397" font-weight="700">[Отклонение запроса на удаление заметки]</text><polygon points="374.21,596.688,384.21,600.688,374.21,604.688,378.21,600.688" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="600.688" x2="380.21" y2="600.688" style="stroke:#181818;stroke-width:1;"/><text x="71.55" y="595.622" fill="#000" font-size="13" textLength="297.661">Выбирает заметку, которую хочет удалить</text><polygon points="75.55,625.82,65.55,629.82,75.55,633.82,71.55,629.82" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="629.82" x2="385.21" y2="629.82" style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="624.754" fill="#000" font-size="13" textLength="135.307">Открывает заметку</text><polygon points="374.21,654.953,384.21,658.953,374.21,662.953,378.21,658.953" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="658.953" x2="380.21" y2="658.953" style="stroke:#181818;stroke-width:1;"/><text x="71.55" y="653.887" fill="#000" font-size="13" textLength="200.637">Нажимает кнопку «Удалить»</text><polygon points="687.194,684.086,697.194,688.086,687.194,692.086,691.194,688.086" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="386.21" y1="688.086" x2="693.194" y2="688.086" style="stroke:#181818;stroke-width:1;"/><text x="393.21" y="683.02" fill="#000" font-size="13" textLength="288.983">запрос DELETE http://notesapp.su/api/notes</text><polygon points="75.55,728.352,65.55,732.352,75.55,736.352,71.55,732.352" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="732.352" x2="385.21" y2="732.352" style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="712.153" fill="#000" font-size="13" textLength="170.86">Открывает уведомление</text><text x="85.682" y="727.286" fill="#000" font-size="13" textLength="139.61">«Удалить заметку?»</text><polygon points="374.21,757.484,384.21,761.484,374.21,765.484,378.21,761.484" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="761.484" x2="380.21" y2="761.484" style="stroke:#181818;stroke-width:1;"/><text x="71.55" y="756.418" fill="#000" font-size="13" textLength="169.698">Нажимает кнопку «НЕТ»</text><polygon points="75.55,786.617,65.55,790.617,75.55,794.617,71.55,790.617" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="790.617" x2="385.21" y2="790.617" style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="785.551" fill="#000" font-size="13" textLength="147.513">Возращает в заметку</text><polygon points="374.21,815.75,384.21,819.75,374.21,823.75,378.21,819.75" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="819.75" x2="380.21" y2="819.75" style="stroke:#181818;stroke-width:1;"/><text x="71.55" y="814.684" fill="#000" font-size="13" textLength="232.077">Нажимает кнопку «Мои заметки»</text><polygon points="75.55,844.883,65.55,848.883,75.55,852.883,71.55,848.883" fill="#181818" style="stroke:#181818;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="848.883" x2="385.21" y2="848.883" style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="843.817" fill="#000" font-size="13" textLength="182.419">Открывает Главный экран</text><?plantuml-src xLHDRzD04BtxLomzaon2d2845t9gkN54GbjxgQtwIzurNDD45Q3orG92GXGaEFRYMarhajYL-Wjc_n6pspHDmHQY0Wue5tjME_lUpDitUyKBRJzrE76bZ4M7qeGzRgzvqarNKy4JEmeb3sNRZW9wrrjtcUSl9-mHbu86wqvaYmTn6lWqO4BoX4gN1rnGXpzagI-fxwsvigqJB6RBA27m6IeOg-TmXFySCjM7eLvRCKkaPtin2oKcgHuKCCQKGzmkCHvUJDXMBs1aEKooLIOuMO9jo10o8t20GGcbsbARIvRLH4TQjsfPEWHsr1RiGu5x6GnLdsXOcEWGHcfmbS08AemhrLC3zPAeJGoVc4mrCEnZFDp7ZXgvRxPQJUIV34iFIyXhwI_Jq2u2768yEKCSuLO5nngFdEp1r_cgJyPM7Oo1Dw9tJYiwnfnARP0xtPNklQwn3ZedZ2GNB8xR8gKizaxN3O2cuFfcQeL0TNFSFi3K2M9DSUw7FxNmWsItJKj_NBMty5e36qqqJ8C54MbQd7fLUvzJWCP2hb-xWMh0Xt-Wullpoh0DTFS6jZjKJtNZv-RMHp9itM8-3k8E0Xr1hgV5Y4JCeGA_MgUvPYkSryKq_jfN7t5HNE21ed4eV_VsuGqYPBX4Sy8tegrdb2qj7Ze4BtHwg-Qa8IjdPFDZhrrU6e_CcMAMDAjxSU6Bv_SlFR-xy0w-N78kp9jbNgndP-ZvVp_Ptm40?></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" data-diagram-type="SEQUENCE" style="width:900px;height:968px;background:#1B1B1B;" width="900px" height="968px" viewBox="0 0 900 968" zoomAndPan="magnify" preserveAspectRatio="xMidYMid meet" contentStyleType="text/css" class="diagram"><?plantuml 1.2026.9beta4?><defs/><g font-family="sans-serif" lengthAdjust="spacing"><rect x="0" y="0" width="900" height="968" fill="#1B1B1B" style="stroke:none;"/><rect x="48.55" y="390.758" width="353.661" height="143.664" fill="none" style="stroke:#FFF;stroke-width:1.5;"/><rect x="48.55" y="552.422" width="666.644" height="304.461" fill="none" style="stroke:#FFF;stroke-width:1.5;"/><g><title>............</title><rect x="61.05" y="86.297" width="8" height="794.586" fill="#000" fill-opacity="0"/><line x1="64.55" y1="86.297" x2="64.55" y2="880.883" style="stroke:#E7E7E7;stroke-width:0.5;stroke-dasharray:5,5;"/></g><g><title>..........</title><rect x="382.71" y="86.297" width="8" height="794.586" fill="#000" fill-opacity="0"/><line x1="386.21" y1="86.297" x2="386.21" y2="880.883" style="stroke:#E7E7E7;stroke-width:0.5;stroke-dasharray:5,5;"/></g><g><title>...</title><rect x="695.694" y="86.297" width="8" height="794.586" fill="#000" fill-opacity="0"/><line x1="699.194" y1="86.297" x2="699.194" y2="880.883" style="stroke:#E7E7E7;stroke-width:0.5;stroke-dasharray:5,5;"/></g><g><title>.... ......</title><rect x="836.205" y="86.297" width="8" height="794.586" fill="#000" fill-opacity="0"/><line x1="839.705" y1="86.297" x2="839.705" y2="880.883" style="stroke:#E7E7E7;stroke-width:0.5;stroke-dasharray:5,5;"/></g><text x="10" y="82.995" fill="#FFF" font-size="14" textLength="103.1">Пользователь</text><ellipse cx="64.55" cy="18.5" rx="8" ry="8" fill="#222" style="stroke:#E7E7E7;stroke-width:0.5;"/><path d="M64.55,26.5 L64.55,53.5 M51.55,34.5 L77.55,34.5 M64.55,53.5 L51.55,68.5 M64.55,53.5 L77.55,68.5" style="stroke:#E7E7E7;stroke-width:0.5;" fill="none"/><rect x="332.152" y="55" width="108.117" height="30.297" fill="#222" style="stroke:#E7E7E7;stroke-width:0.5;" rx="2.5" ry="2.5"/><text x="339.152" y="74.995" fill="#FFF" font-size="14" textLength="94.117">Приложение</text><rect x="679.322" y="55" width="39.744" height="30.297" fill="#222" style="stroke:#E7E7E7;stroke-width:0.5;" rx="2.5" ry="2.5"/><text x="686.322" y="74.995" fill="#FFF" font-size="14" textLength="25.744">Бэк</text><text x="789.424" y="82.995" fill="#FFF" font-size="14" textLength="94.562">База данных</text><path d="M821.705,34 C821.705,24 839.705,24 839.705,24 C839.705,24 857.705,24 857.705,34 L857.705,60 C857.705,70 839.705,70 839.705,70 C839.705,70 821.705,70 821.705,60 L821.705,34" style="stroke:#E7E7E7;stroke-width:0.5;" fill="#222"/><path d="M821.705,34 C821.705,44 839.705,44 839.705,44 C839.705,44 857.705,44 857.705,34" style="stroke:#E7E7E7;stroke-width:0.5;" fill="none"/><text x="10" y="893.878" fill="#FFF" font-size="14" textLength="103.1">Пользователь</text><ellipse cx="64.55" cy="905.68" rx="8" ry="8" fill="#222" style="stroke:#E7E7E7;stroke-width:0.5;"/><path d="M64.55,913.68 L64.55,940.68 M51.55,921.68 L77.55,921.68 M64.55,940.68 L51.55,955.68 M64.55,940.68 L77.55,955.68" style="stroke:#E7E7E7;stroke-width:0.5;" fill="none"/><rect x="332.152" y="880.883" width="108.117" height="30.297" fill="#222" style="stroke:#E7E7E7;stroke-width:0.5;" rx="2.5" ry="2.5"/><text x="339.152" y="900.878" fill="#FFF" font-size="14" textLength="94.117">Приложение</text><rect x="679.322" y="880.883" width="39.744" height="30.297" fill="#222" style="stroke:#E7E7E7;stroke-width:0.5;" rx="2.5" ry="2.5"/><text x="686.322" y="900.878" fill="#FFF" font-size="14" textLength="25.744">Бэк</text><text x="789.424" y="893.878" fill="#FFF" font-size="14" textLength="94.562">База данных</text><path d="M821.705,907.18 C821.705,897.18 839.705,897.18 839.705,897.18 C839.705,897.18 857.705,897.18 857.705,907.18 L857.705,933.18 C857.705,943.18 839.705,943.18 839.705,943.18 C839.705,943.18 821.705,943.18 821.705,933.18 L821.705,907.18" style="stroke:#E7E7E7;stroke-width:0.5;" fill="#222"/><path d="M821.705,907.18 C821.705,917.18 839.705,917.18 839.705,917.18 C839.705,917.18 857.705,917.18 857.705,907.18" style="stroke:#E7E7E7;stroke-width:0.5;" fill="none"/><polygon points="374.21,111.43,384.21,115.43,374.21,119.43,378.21,115.43" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="115.43" x2="380.21" y2="115.43" style="stroke:#E7E7E7;stroke-width:1;"/><text x="71.55" y="110.364" fill="#FFF" font-size="13" textLength="297.661">Выбирает заметку, которую хочет удалить</text><polygon points="75.55,140.563,65.55,144.563,75.55,148.563,71.55,144.563" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="144.563" x2="385.21" y2="144.563" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="139.497" fill="#FFF" font-size="13" textLength="135.307">Открывает заметку</text><polygon points="374.21,169.695,384.21,173.695,374.21,177.695,378.21,173.695" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="173.695" x2="380.21" y2="173.695" style="stroke:#E7E7E7;stroke-width:1;"/><text x="71.55" y="168.629" fill="#FFF" font-size="13" textLength="200.637">Нажимает кнопку «Удалить»</text><polygon points="687.194,198.828,697.194,202.828,687.194,206.828,691.194,202.828" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="386.21" y1="202.828" x2="693.194" y2="202.828" style="stroke:#E7E7E7;stroke-width:1;"/><text x="393.21" y="197.762" fill="#FFF" font-size="13" textLength="288.983">запрос DELETE http://notesapp.su/api/notes</text><polygon points="75.55,243.094,65.55,247.094,75.55,251.094,71.55,247.094" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="247.094" x2="385.21" y2="247.094" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="226.895" fill="#FFF" font-size="13" textLength="170.86">Открывает уведомление</text><text x="85.682" y="242.028" fill="#FFF" font-size="13" textLength="139.61">«Удалить заметку?»</text><polygon points="374.21,272.227,384.21,276.227,374.21,280.227,378.21,276.227" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="276.227" x2="380.21" y2="276.227" style="stroke:#E7E7E7;stroke-width:1;"/><text x="71.55" y="271.161" fill="#FFF" font-size="13" textLength="162.817">Нажимает кнопку «ДА»</text><polygon points="827.705,301.359,837.705,305.359,827.705,309.359,831.705,305.359" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="699.194" y1="305.359" x2="833.705" y2="305.359" style="stroke:#E7E7E7;stroke-width:1;"/><text x="706.194" y="300.293" fill="#FFF" font-size="13" textLength="116.511">Удаляет заметку</text><polygon points="397.21,330.492,387.21,334.492,397.21,338.492,393.21,334.492" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="391.21" y1="334.492" x2="698.194" y2="334.492" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:2,2;"/><text x="403.21" y="329.426" fill="#FFF" font-size="13" textLength="48.407">204 ОК</text><polygon points="75.55,374.758,65.55,378.758,75.55,382.758,71.55,378.758" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="378.758" x2="385.21" y2="378.758" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="358.559" fill="#FFF" font-size="13" textLength="170.86">Открывает уведомление</text><text x="85.682" y="373.692" fill="#FFF" font-size="13" textLength="198.777">«Заметка успешно удалена»</text><path d="M48.55,390.758 L112.993,390.758 L112.993,397.891 L102.993,407.891 L48.55,407.891 L48.55,390.758" style="stroke:#FFF;stroke-width:1.5;" fill="#555"/><rect x="48.55" y="390.758" width="353.661" height="143.664" fill="none" style="stroke:#FFF;stroke-width:1.5;"/><text x="63.55" y="403.825" fill="#FFF" font-size="13" textLength="19.443" font-weight="700">alt</text><text x="127.993" y="402.968" fill="#FFF" font-size="11" textLength="174.625" font-weight="700">[Возврат к списку заметок]</text><polygon points="374.21,435.023,384.21,439.023,374.21,443.023,378.21,439.023" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="439.023" x2="380.21" y2="439.023" style="stroke:#E7E7E7;stroke-width:1;"/><text x="71.55" y="433.958" fill="#FFF" font-size="13" textLength="297.661">Выбирает заметку, которую хочет удалить</text><polygon points="75.55,464.156,65.55,468.156,75.55,472.156,71.55,468.156" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="468.156" x2="385.21" y2="468.156" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="463.09" fill="#FFF" font-size="13" textLength="135.307">Открывает заметку</text><polygon points="374.21,493.289,384.21,497.289,374.21,501.289,378.21,497.289" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="497.289" x2="380.21" y2="497.289" style="stroke:#E7E7E7;stroke-width:1;"/><text x="71.55" y="492.223" fill="#FFF" font-size="13" textLength="232.077">Нажимает кнопку «Мои заметки»</text><polygon points="75.55,522.422,65.55,526.422,75.55,530.422,71.55,526.422" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="526.422" x2="385.21" y2="526.422" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="521.356" fill="#FFF" font-size="13" textLength="182.419">Открывает Главный экран</text><path d="M48.55,552.422 L112.993,552.422 L112.993,559.555 L102.993,569.555 L48.55,569.555 L48.55,552.422" style="stroke:#FFF;stroke-width:1.5;" fill="#555"/><rect x="48.55" y="552.422" width="666.644" height="304.461" fill="none" style="stroke:#FFF;stroke-width:1.5;"/><text x="63.55" y="565.489" fill="#FFF" font-size="13" textLength="19.443" font-weight="700">alt</text><text x="127.993" y="564.632" fill="#FFF" font-size="11" textLength="281.397" font-weight="700">[Отклонение запроса на удаление заметки]</text><polygon points="374.21,596.688,384.21,600.688,374.21,604.688,378.21,600.688" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="600.688" x2="380.21" y2="600.688" style="stroke:#E7E7E7;stroke-width:1;"/><text x="71.55" y="595.622" fill="#FFF" font-size="13" textLength="297.661">Выбирает заметку, которую хочет удалить</text><polygon points="75.55,625.82,65.55,629.82,75.55,633.82,71.55,629.82" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="629.82" x2="385.21" y2="629.82" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="624.754" fill="#FFF" font-size="13" textLength="135.307">Открывает заметку</text><polygon points="374.21,654.953,384.21,658.953,374.21,662.953,378.21,658.953" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="658.953" x2="380.21" y2="658.953" style="stroke:#E7E7E7;stroke-width:1;"/><text x="71.55" y="653.887" fill="#FFF" font-size="13" textLength="200.637">Нажимает кнопку «Удалить»</text><polygon points="687.194,684.086,697.194,688.086,687.194,692.086,691.194,688.086" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="386.21" y1="688.086" x2="693.194" y2="688.086" style="stroke:#E7E7E7;stroke-width:1;"/><text x="393.21" y="683.02" fill="#FFF" font-size="13" textLength="288.983">запрос DELETE http://notesapp.su/api/notes</text><polygon points="75.55,728.352,65.55,732.352,75.55,736.352,71.55,732.352" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="732.352" x2="385.21" y2="732.352" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="712.153" fill="#FFF" font-size="13" textLength="170.86">Открывает уведомление</text><text x="85.682" y="727.286" fill="#FFF" font-size="13" textLength="139.61">«Удалить заметку?»</text><polygon points="374.21,757.484,384.21,761.484,374.21,765.484,378.21,761.484" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="761.484" x2="380.21" y2="761.484" style="stroke:#E7E7E7;stroke-width:1;"/><text x="71.55" y="756.418" fill="#FFF" font-size="13" textLength="169.698">Нажимает кнопку «НЕТ»</text><polygon points="75.55,786.617,65.55,790.617,75.55,794.617,71.55,790.617" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="790.617" x2="385.21" y2="790.617" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="785.551" fill="#FFF" font-size="13" textLength="147.513">Возращает в заметку</text><polygon points="374.21,815.75,384.21,819.75,374.21,823.75,378.21,819.75" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="64.55" y1="819.75" x2="380.21" y2="819.75" style="stroke:#E7E7E7;stroke-width:1;"/><text x="71.55" y="814.684" fill="#FFF" font-size="13" textLength="232.077">Нажимает кнопку «Мои заметки»</text><polygon points="75.55,844.883,65.55,848.883,75.55,852.883,71.55,848.883" fill="#E7E7E7" style="stroke:#E7E7E7;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="69.55" y1="848.883" x2="385.21" y2="848.883" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:2,2;"/><text x="81.55" y="843.817" fill="#FFF" font-size="13" textLength="182.419">Открывает Главный экран</text><?plantuml-src xLHDRzD04BtxLomzasnLSOeGNCY9SkE8XBRsGgpuIzurlQQ9Aa3bgmLK2L4gbICNOpMjIM9NwY-O_KVCRjCq1Lk82ZYWNEnPpUoRcJTlzfeRs5xYSDAHCX8jIcEstdpioawobWWUss4WUI2RTkZJUswtmrplRioUS2cettL2MpoC4j-ZFXEInrHskCy5TVWZbdYIEYpkDhNVOhOCOmBxKC9OlO1Z_6UGgZuCzTcAM2nTsurO8358zI27COOSeRj0UtWvO5kzX97bCCdMcE1a2ROXHSYKm24Q1HHgIsqkMLPTEjAuLPcbHM17RS5NoD6Nmb3rYOQ5YJPXf0RN2OoWHBjKFJLGhuZQHFEfYLG3atsCb_lOKMtkcur6NV9F9aiFIyWgqr-beJq4E49xSeuuGbS99ngFd7w1p_DLduwjAXW3RqXldLLqWZ6bsY1tsglj-ssZ71HE44ekM1GrHK9Pv9wTQm1DmTNDL1A1x6ReFiJG2M9DSHu4FxNm0sMtJKj_dBLty4O36quqJ8q44MbQd7fTESyfG6qXAyita0tuy0zOtBse3Dj0TMzWkqFrJ3T-8Mvz9SNMBURX8kuWq35aUbiCISHSol6hUPfhjiHzNMpZhtNr4G_vfJoGroxbxquVtY92YaSK9tmZMdg6sSBYWKDmeDEfcficMJ5BDh_sMkM5qSYSA6P1ixeN0ryylt_f-Ts3zt1mnRqmRvPviPwVesV__MP_1m00?></g></svg></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.instant", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
