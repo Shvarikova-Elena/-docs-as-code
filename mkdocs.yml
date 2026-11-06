@@ -1,8 +1,8 @@
 site_name: Учебный проект
-site_description: Описание действий при работе с платформой Взнания
+site_description: Описание учебного проекта
 theme:
   name: material
-  logo: images/15.jpg
+  logo: images/16.png
   font:
     text: Roboto
     code: Roboto Mono
@@ -12,7 +12,7 @@ theme:
     - scheme: default 
       toggle:
         icon: material/weather-sunny # Иконка для активации светлой темы
-        name: Выключить солнышко # Всплывающий текст-подсказка
+        name: Включить темную тему # Всплывающий текст-подсказка
       primary: blue grey # Основной цвет
       accent: grey # Акцентный цвет
       # вы можете использовать любой цвет из списка: 
@@ -23,7 +23,7 @@ theme:
     - scheme: slate
       toggle:
         icon: material/weather-night
-        name: Позвать солнышко
+        name: Включить светлую тему
       primary: deep purple
       accent: cyan
 
@@ -74,6 +74,7 @@ markdown_extensions: # Расширения markdown
   - pymdownx.emoji: # Иконки и эмодзи
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.snippets    
 
 plugins:
   - search
